@@ -17,6 +17,7 @@ public class starter {
         bst.getMax();
 
         bst.getMaxRecurse();
+        bst.getMinRecurse();
 
         return bst;
     };

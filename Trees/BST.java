@@ -12,6 +12,9 @@ public class BST {
        System.out.println("Max Recursively: "+ getMaxRecurse(root).value);
 
     }
+    public void getMinRecurse(){
+        System.out.println("Min Recursively: "+ getMinRecurse(root).value);
+    }
 
     private Node addRecrusively(Node current, int value){
 
@@ -65,6 +68,17 @@ public class BST {
             max = getMaxRecurse(current.right);
         }
         return max;
+    }
+
+    private Node getMinRecurse(Node current){
+        Node min;
+        if(current.left == null || root == null){
+            return current;
+        }else{
+
+            min = getMinRecurse(current.left);
+        }
+        return min;
     }
 
 }
