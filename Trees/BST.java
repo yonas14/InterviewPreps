@@ -81,4 +81,20 @@ public class BST {
         return min;
     }
 
+
+    private Node findSuccsor(Node current){
+        if(current == null || current.right == null){
+            return current;
+        }else {
+            while(current.right){}
+
+        }
+
+
+
+    }
+
+
+
+
 }
