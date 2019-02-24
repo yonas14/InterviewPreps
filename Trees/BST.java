@@ -21,13 +21,15 @@ public class BST {
         if(current == null){
             return new Node(value);
         }
-
+        Node temp;
         if(current.value > value){
-            current.left = this.addRecrusively(current.left,value);
-        }else if(current.value < value){
-            current.right = this.addRecrusively(current.right, value);
-        }else{
-            return current;
+            temp = this.addRecrusively(current.left,value);
+            current.left = temp;
+            temp.parent = current;
+        }else if(current.value <= value){
+            temp = this.addRecrusively(current.right, value);
+            current.right = temp;
+            temp.parent = current;
         }
         return current;
     }
@@ -82,16 +84,19 @@ public class BST {
     }
 
 
+//    Finds the true successor
     private Node findSuccsor(Node current){
-        if(current == null || current.right == null){
-            return current;
+        if(root.right != null){
+            return getMinRecurse(root.right);
         }else {
-            while(current.right){}
+            Node parent = current.parent;
+            while( parent != null && parent == current.right){
 
+                current = parent;
+                parent = parent.parent;
+            }
+            return parent;
         }
-
-
-
     }
 
 
