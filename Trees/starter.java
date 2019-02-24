@@ -8,8 +8,8 @@ public class starter {
     }
     public static BST add2Tree(){
         BST bst = new BST();
-        bst.add(4);
-        bst.add(3);
+        bst.add(20);
+        bst.add(8);
         bst.add(1);
         bst.add(5);
 
@@ -18,6 +18,8 @@ public class starter {
 
         bst.getMaxRecurse();
         bst.getMinRecurse();
+
+        bst.findSucc();
 
         return bst;
     };
