@@ -17,7 +17,7 @@ public class BST {
     }
 
     public void findSucc(){
-      System.out.println("Right succesor: "+ findSuccsor(root.left.right.right).value);
+      System.out.println("Right successor: "+ findSuccsor(root.left.right.right).value);
 
     }
 
