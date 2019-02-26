@@ -54,6 +54,7 @@ BinarySearchTree.prototype.depthFirstPrint = function (callback) {
     this.right.depthFirstPrint();
   }
 };
+
 BinarySearchTree.prototype.breadthFirstPrint = function (callback) {
   /**
    * for every node
