@@ -24,7 +24,7 @@ public class starter {
 
         bst.findSucc();
 
-        bst.findValue(00);
+        bst.findValue(4);
 
         return bst;
     };
