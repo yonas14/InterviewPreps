@@ -20,6 +20,9 @@ public class BST {
       System.out.println("Right successor: "+ findSuccsor(root.left.right.right).value);
 
     }
+    public void findValue(int value){
+        searchValue(value, root);
+    }
 
     private Node addRecrusively(Node current, int value){
 
