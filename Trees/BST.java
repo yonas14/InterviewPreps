@@ -38,7 +38,17 @@ public class BST {
         }
         return current;
     }
+    private static void searchValue(int value, Node current){
 
+        if(current.value == value){
+            System.out.println("Found the value");
+        }else if( current.value <= value){
+            searchValue(value, current.right);
+        }else if(current.value > value){
+            searchValue(value, current.left);
+        }
+
+    }
 
     public Node getMinimum(){
         Node min;

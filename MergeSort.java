@@ -21,6 +21,8 @@ public class MergeSort {
         }
     }
 
+
+
     private static void merge(int low, int middle, int high){
 
         for(int i = low; i <= high; i++){
