@@ -6,11 +6,9 @@ public class BST {
 
     public void add(int value){
         root = addRecrusively(root, value);
-
     }
     public void getMaxRecurse(){
        System.out.println("Max Recursively: "+ getMaxRecurse(root).value);
-
     }
     public void getMinRecurse(){
         System.out.println("Min Recursively: "+ getMinRecurse(root).value);
@@ -18,7 +16,6 @@ public class BST {
 
     public void findSucc(){
       System.out.println("Right successor: "+ findSuccsor(root.left.right.right).value);
-
     }
     public void findValue(int value){
         searchValue(value, root);
@@ -102,11 +99,8 @@ public class BST {
         }
         return min;
     }
-
-
 //    Finds the true successor
     private Node findSuccsor(Node current){
-//      if the right side of the tree is not empty, find the
         if(root.right != null){
             return getMinRecurse(root.right);
         }else {
@@ -119,8 +113,4 @@ public class BST {
             return parent;
         }
     }
-
-
-
-
 }

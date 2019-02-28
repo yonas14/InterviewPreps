@@ -8,6 +8,7 @@ public class starter {
     }
     public static BST add2Tree(){
         BST bst = new BST();
+
         bst.add(20);
         bst.add(8);
         bst.add(22);
