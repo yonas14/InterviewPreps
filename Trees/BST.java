@@ -20,6 +20,9 @@ public class BST {
     public void findValue(int value){
         searchValue(value, root);
     }
+    public void maxDepth(){
+        System.out.println("Max height is: " + height(root));
+    }
 
     private Node addRecrusively(Node current, int value){
 
@@ -112,5 +115,26 @@ public class BST {
             }
             return parent;
         }
+    }
+
+
+    private int height(Node current){
+
+
+        if(current == null){
+            return 0;
+        }else{
+            int lheight = height(current.left);
+            int rheight = height(current.right);
+
+            if( lheight > rheight){
+                return lheight;
+            }else {
+                return rheight;
+            }
+        }
+
+
+
     }
 }

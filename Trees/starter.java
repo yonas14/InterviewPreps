@@ -27,6 +27,8 @@ public class starter {
 
         bst.findValue(4);
 
+        bst.maxDepth();
+
         return bst;
     };
 
