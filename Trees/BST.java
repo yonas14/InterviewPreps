@@ -25,6 +25,11 @@ public class BST {
         System.out.println("Max height is: " + height(root));
     }
 
+    public void depthFirstTraversal(){
+
+        DFT(root);
+    };
+
     private Node addRecrusively(Node current, int value){
 
         if(current == null){
@@ -143,6 +148,17 @@ public class BST {
         for(int i =0;  i <= height; i++){
             printGivenLevel(root, i);
         }
+    }
+
+    private void DFT(Node current){
+        if (current == null){
+            return;
+        }else{
+            System.out.println(current.value);
+            DFT(current.left);
+            DFT(current.right);
+        }
+
     }
 
     private void printGivenLevel(Node current, int level){

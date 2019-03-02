@@ -30,6 +30,7 @@ public class starter {
         bst.maxDepth();
 
         bst.BFT();
+        bst.depthFirstTraversal();
 
         return bst;
     };
