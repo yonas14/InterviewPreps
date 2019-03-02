@@ -128,9 +128,9 @@ public class BST {
             int rheight = height(current.right);
 
             if( lheight > rheight){
-                return lheight;
+                return lheight +1 ;
             }else {
-                return rheight;
+                return rheight +1;
             }
         }
 
