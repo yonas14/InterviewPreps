@@ -29,6 +29,8 @@ public class starter {
 
         bst.maxDepth();
 
+        bst.BFT();
+
         return bst;
     };
 

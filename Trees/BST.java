@@ -15,7 +15,8 @@ public class BST {
     }
 
     public void findSucc(){
-      System.out.println("Right successor: "+ findSuccsor(root.left.right.right).value);
+        System.out.println("====================");
+        System.out.println("Right successor: "+ findSuccsor(root.left.right.right).value);
     }
     public void findValue(int value){
         searchValue(value, root);
@@ -120,7 +121,6 @@ public class BST {
 
     private int height(Node current){
 
-
         if(current == null){
             return 0;
         }else{
@@ -133,8 +133,29 @@ public class BST {
                 return rheight +1;
             }
         }
+    }
 
+//    Breadth first treversal
+    public void BFT(){
+        int height = height(root);
+        System.out.println("====================");
+        System.out.println("Breadth First Traversal ");
+        for(int i =0;  i <= height; i++){
+            printGivenLevel(root, i);
+        }
+    }
 
+    private void printGivenLevel(Node current, int level){
+
+        if(current == null){
+            return;
+        }
+        if(level == 1){
+            System.out.print(current.value + " ");
+        }else if(level > 1){
+            printGivenLevel(current.right, level-1);
+            printGivenLevel(current.left, level-1);
+        }
 
     }
 }
