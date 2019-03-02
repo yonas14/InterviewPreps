@@ -26,7 +26,6 @@ public class FindCommonStrings {
             array1[i] = rand.nextInt(10)+1;
             array2[i] = rand.nextInt(10)+1;
 
-
         }
 
     }
