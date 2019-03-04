@@ -28,9 +28,14 @@ public class FindCommonStrings {
 
         }
 
+        duplicates(array1,array2);
+
     }
 
-    public static void duplicates(){}
+    public static void duplicates(int arr [], int arr2 []){
+    
+
+    }
 
 
 
