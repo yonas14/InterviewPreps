@@ -204,9 +204,9 @@ public class BST {
         if(current == null){
             return;
         }
-        if(level == 1){
+        if(level == 0){
             System.out.print(current.value + " ");
-        }else if(level > 1){
+        }else if(level >= 1){
             printGivenLevel(current.right, level-1);
             printGivenLevel(current.left, level-1);
         }
