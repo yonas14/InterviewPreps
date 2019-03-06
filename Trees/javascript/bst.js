@@ -55,29 +55,30 @@ BinarySearchTree.prototype.depthFirstPrint = function (callback) {
   }
 };
 
+
+// applies the callback in the order of breath first (level order)
 BinarySearchTree.prototype.breadthFirstPrint = function (callback) {
   /**
    * for every node
    * print value
-   * add node to queue
-   *  add right node to quue
-   *
+   * add left node to queue
+   * add right node to queue
    */
-
   const array = [this];
   let i = 0;
+
   while (i < array.length) {
+    // print value
     console.log(array[i].value);
 
-    // push left child to array if left exist
+    // push left child to array if left exists
     if (array[i].left) {
       array.push(array[i].left);
     }
-    // push right child to array if right exist
+    // push right child to array if rignth exists
     if (array[i].right) {
       array.push(array[i].right);
     }
-
-    i += 1;
+    i++;
   }
 };
