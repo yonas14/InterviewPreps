@@ -10,12 +10,12 @@ public class starter {
         BST bst = new BST();
 
         bst.add(20);
-        bst.add(8);
-        bst.add(22);
-        bst.add(4);
-        bst.add(12);
-        bst.add(10);
-        bst.add(14);
+//        bst.add(8);
+//        bst.add(22);
+//        bst.add(4);
+//        bst.add(12);
+//        bst.add(10);
+//        bst.add(14);
 
         bst.getMinimum();
         bst.getMax();
@@ -25,12 +25,15 @@ public class starter {
 
         bst.findSucc();
 
+        bst.deleteNode(20);
+
         bst.findValue(4);
 
         bst.maxDepth();
 
         bst.BFT();
         bst.depthFirstTraversal();
+
 
         return bst;
     };

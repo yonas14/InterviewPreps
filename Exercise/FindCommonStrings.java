@@ -33,7 +33,7 @@ public class FindCommonStrings {
     }
 
     public static void duplicates(int arr [], int arr2 []){
-    
+
 
     }
 

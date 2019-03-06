@@ -16,10 +16,10 @@ public class BST {
 
     public void findSucc(){
         System.out.println("====================");
-        System.out.println("Right successor: "+ findSuccsor(root.left.right.right).value);
+//        System.out.println("Right successor: "+ findSuccsor(root.left.right.right).value);
     }
-    public void findValue(int value){
-        searchValue(value, root);
+    public Node findValue(int value){
+        return searchValue(value, root);
     }
     public void maxDepth(){
         System.out.println("Max height is: " + height(root));
@@ -47,19 +47,23 @@ public class BST {
         }
         return current;
     }
-    private static void searchValue(int value, Node current) {
+    private static Node searchValue(int value, Node current) {
 
 
         if(current == null){
             System.out.print("Value not found in the Tree");
+            return null;
         }else if(current.value == value){
             System.out.println("Found the value");
+            return current;
         }else if( current.value <= value){
             searchValue(value, current.right);
         }else if(current.value > value){
             searchValue(value, current.left);
         }
+        return null;
     }
+
 
     public Node getMinimum(){
         Node min;
@@ -123,6 +127,18 @@ public class BST {
         }
     }
 
+    public void deleteNode(int value){
+
+        Node removeNode = findValue(value);
+
+
+        if(removeNode.left == null && removeNode.right == null)
+        {
+            removeNode = null;
+            System.out.print("Deleted");
+
+        }
+    }
 
     private int height(Node current){
 
@@ -140,7 +156,7 @@ public class BST {
         }
     }
 
-//    Breadth first treversal
+//    Breadth first traversal
     public void BFT(){
         int height = height(root);
         System.out.println("====================");
