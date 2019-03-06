@@ -11,12 +11,12 @@ public class starter {
 
         bst.add(20);
         bst.add(8);
-//        bst.add(22);
+        bst.add(22);
 //        bst.add(4);
 //        bst.add(12);
 //        bst.add(10);
 //        bst.add(14);
-
+        Node tree = bst.root;
         bst.getMinimum();
         bst.getMax();
 
@@ -25,9 +25,9 @@ public class starter {
 
         bst.findSucc();
 
-        bst.deleteNode(20);
+        bst.deleteNode(20, tree);
 
-        bst.findValue(4, bst.root);
+        bst.findValue(4, tree);
 
         bst.maxDepth();
 

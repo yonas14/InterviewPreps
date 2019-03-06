@@ -21,8 +21,8 @@ public class BST {
     public Node findValue(int value, Node root){
         return searchValue(value, root);
     }
-    public void deleteNode(int value){
-        deletion(value);
+    public void deleteNode(int value, Node root){
+        deletion(value, root);
     }
     public void maxDepth(){
         System.out.println("Max height is: " + height(root));
@@ -136,18 +136,21 @@ public class BST {
 //  But if Z has both left and right children, then find the successor, Right side of the tree
 //
 
-    private void deletion(int value){
+    private void deletion(int value, Node root){
 
+        int height = height(root);
 //      if root doesn't have any children, set to null
         if(root.left == null && root.right == null){
             root = null;
         }
 
 //      if the height of the tree is one
-        if(height(root) == 1 && (root.right == null || root.left == null)){
+        if(height == 1 && (root.right == null || root.left == null)){
             System.out.print("only  has one child");
         }else {
-
+            if(height == 1){
+                System.out.print("Has two children");
+            }
 
         }
         System.out.print("Deleted");
