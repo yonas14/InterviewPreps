@@ -134,25 +134,27 @@ public class BST {
 //  if  Z has only one child and it is the right child then set  Z to its right child,
 //  vise versa if the only child of Z is the right child
 //  But if Z has both left and right children, then find the successor, Right side of the tree
-//  
+//
 
     private void deletion(int value){
 
-        Node removeNode = findValue(value, root);
-
-
-        if(removeNode.left == null && removeNode.right == null)
-        {
-            removeNode = null;
-            System.out.print("Deleted");
-
+//      if root doesn't have any children, set to null
+        if(root.left == null && root.right == null){
+            root = null;
         }
+
+//      if the height of the tree is one
+        if(height(root) == 1 && (root.right == null || root.left == null)){
+            System.out.print("only  has one child");
+        }
+        System.out.print("Deleted");
+
     }
 
     private int height(Node current){
 
         if(current == null){
-            return 0;
+            return -1;
         }else{
             int lheight = height(current.left);
             int rheight = height(current.right);
