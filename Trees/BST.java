@@ -129,8 +129,13 @@ public class BST {
             return parent;
         }
     }
-//  Deletion process
-//  if the node being deleted doesn't have a child, simply set to null
+//  Deletion process of Node Z
+//  if  Z doesn't have a child, simply set to null
+//  if  Z has only one child and it is the right child then set  Z to its right child,
+//  vise versa if the only child of Z is the right child
+//  But if Z has both left and right children, then find the successor, Right side of the tree
+//  
+
     private void deletion(int value){
 
         Node removeNode = findValue(value, root);
