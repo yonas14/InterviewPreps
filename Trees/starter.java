@@ -27,7 +27,7 @@ public class starter {
 
         bst.deleteNode(20);
 
-        bst.findValue(4);
+        bst.findValue(4, bst.root);
 
         bst.maxDepth();
 

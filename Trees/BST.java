@@ -18,8 +18,11 @@ public class BST {
         System.out.println("====================");
 //        System.out.println("Right successor: "+ findSuccsor(root.left.right.right).value);
     }
-    public Node findValue(int value){
+    public Node findValue(int value, Node root){
         return searchValue(value, root);
+    }
+    public void deleteNode(int value){
+        deletion(value);
     }
     public void maxDepth(){
         System.out.println("Max height is: " + height(root));
@@ -126,10 +129,11 @@ public class BST {
             return parent;
         }
     }
+//  Deletion process
+//  if the node being deleted doesn't have a child, simply set to null
+    private void deletion(int value){
 
-    public void deleteNode(int value){
-
-        Node removeNode = findValue(value);
+        Node removeNode = findValue(value, root);
 
 
         if(removeNode.left == null && removeNode.right == null)
