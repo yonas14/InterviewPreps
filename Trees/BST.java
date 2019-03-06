@@ -146,6 +146,9 @@ public class BST {
 //      if the height of the tree is one
         if(height(root) == 1 && (root.right == null || root.left == null)){
             System.out.print("only  has one child");
+        }else {
+
+
         }
         System.out.print("Deleted");
 
