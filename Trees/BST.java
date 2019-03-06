@@ -144,7 +144,15 @@ public class BST {
 
 //      if the height of the tree is one
         if(height == 1 && (root.right == null || root.left == null)){
-            System.out.println("only  has one child");
+            if(root.right == null){
+                root = root.left;
+                root.parent = null;
+                return root;
+            }else {
+                root = root.right;
+                root.parent = null;
+                return root;
+            }
         }else {
             if(height == 1 && value == root.value){
                 System.out.println("Has two children, but length is 1");
@@ -153,10 +161,9 @@ public class BST {
                 root = root.right;
                 root.parent = null;
                 root.left.parent = root;
-
-
                 return root;
-
+            }else{
+                //Has two child and length
             }
         }
         return null;
