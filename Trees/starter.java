@@ -16,7 +16,12 @@ public class starter {
 //        bst.add(12);
 //        bst.add(10);
 //        bst.add(14);
+
         Node tree = bst.root;
+
+        bst.BFT(tree);
+        bst.depthFirstTraversal();
+
         bst.getMinimum();
         bst.getMax();
 
@@ -25,14 +30,13 @@ public class starter {
 
         bst.findSucc();
 
-        bst.deleteNode(20, tree);
+       Node newTree =  bst.deleteNode(20, tree);
 
         bst.findValue(4, tree);
 
         bst.maxDepth();
 
-        bst.BFT();
-        bst.depthFirstTraversal();
+        bst.BFT(newTree);
 
 
         return bst;

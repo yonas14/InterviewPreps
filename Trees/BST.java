@@ -21,9 +21,7 @@ public class BST {
     public Node findValue(int value, Node root){
         return searchValue(value, root);
     }
-    public void deleteNode(int value, Node root){
-        deletion(value, root);
-    }
+
     public void maxDepth(){
         System.out.println("Max height is: " + height(root));
     }
@@ -136,7 +134,7 @@ public class BST {
 //  But if Z has both left and right children, then find the successor, Right side of the tree
 //
 
-    private void deletion(int value, Node root){
+    public Node deleteNode(int value, Node root){
 
         int height = height(root);
 //      if root doesn't have any children, set to null
@@ -146,15 +144,22 @@ public class BST {
 
 //      if the height of the tree is one
         if(height == 1 && (root.right == null || root.left == null)){
-            System.out.print("only  has one child");
+            System.out.println("only  has one child");
         }else {
-            if(height == 1){
-                System.out.print("Has two children");
+            if(height == 1 && value == root.value){
+                System.out.println("Has two children, but length is 1");
+
+                root.right.left = root.left;
+                root = root.right;
+                root.parent = null;
+                root.left.parent = root;
+
+
+                return root;
+
             }
-
         }
-        System.out.print("Deleted");
-
+        return null;
     }
 
     private int height(Node current){
@@ -174,7 +179,7 @@ public class BST {
     }
 
 //    Breadth first traversal
-    public void BFT(){
+    public void BFT(Node root){
         int height = height(root);
         System.out.println("====================");
         System.out.println("Breadth First Traversal ");
