@@ -155,19 +155,27 @@ public class BST {
             }
         }else {
             if(height == 1 && value == root.value){
-                System.out.println("Has two children, but length is 1");
+                System.out.println("Has two children, but height is 1");
 
-                root.right.left = root.left;
-                root = root.right;
-                root.parent = null;
-                root.left.parent = root;
-                return root;
+                root.left.parent = root.right;
+                root.right.parent = null;
+                root.left.parent.left = root.left;
+                return root.left.parent;
             }else{
-                //Has two child and length
+                //Has two child and length > 1
+                Node successor = findSuccsor(root);
+                while (root.value != successor.parent.value){
+                    successor.right = successor.parent;
+                    successor.left = successor.parent.left;
+
+                }
+
             }
         }
         return null;
     }
+
+
 
     private int height(Node current){
 
