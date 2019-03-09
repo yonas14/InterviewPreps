@@ -132,7 +132,6 @@ public class BST {
 //  if  Z has only one child and it is the right child then set  Z to its right child,
 //  vise versa if the only child of Z is the right child
 //  But if Z has both left and right children, then find the successor, Right side of the tree
-//
 
     public Node deleteNode(int value, Node root){
 
@@ -223,7 +222,7 @@ public class BST {
         }
 
     }
-
+//  print given level where level is set to i
     private void printGivenLevel(Node current, int level){
 
         if(current == null){
