@@ -48,8 +48,8 @@ public class BST {
         }
         return current;
     }
+//  Given a value, find the node
     private static Node searchValue(int value, Node current) {
-
 
         if(current == null){
             System.out.print("Value not found in the Tree");
@@ -173,20 +173,20 @@ public class BST {
             }
         }
 
+//
+//        if(root.left == null){
+//
+//        }else if(root.right.value == value){
+//
+//        }else{
+//        }
 
-        if(root.left == null){
-
-        }else if(root.right.value == value){
-
-        }else{
-            
-        }
 
         return null;
     }
 
 
-
+//  This helps find the height
     private int height(Node current){
 
         if(current == null){
