@@ -172,6 +172,16 @@ public class BST {
 
             }
         }
+
+
+        if(root.left == null){
+
+        }else if(root.right.value == value){
+
+        }else{
+            
+        }
+
         return null;
     }
 
