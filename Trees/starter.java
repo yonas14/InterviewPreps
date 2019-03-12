@@ -11,9 +11,9 @@ public class starter {
 
         bst.add(20);
         bst.add(8);
+        bst.add(23);
+        bst.add(21);
         bst.add(22);
-//        bst.add(21);
-//        bst.add(12);
 //        bst.add(10);
 //        bst.add(14);
 
