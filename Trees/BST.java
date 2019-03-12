@@ -182,6 +182,7 @@ public class BST {
 //       if the left child is null, assign the root to be the right child
         if(current.left == null){
             current = current.right;
+            current.parent = null;
             return current;
 
         }else if(current.right == null){
