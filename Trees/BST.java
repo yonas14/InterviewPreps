@@ -138,19 +138,36 @@ public class BST {
     public Node deleteNode(int value, Node current ){
 
         Node x = current;
-        if(current.right == null){
+        if(current.left == null){
+            Node finall = transplant(current, current.right);
+        }else if(current.right == null){
+            Node finall = transplant(current, current.left);
+        }else{
+            Node y = getMinRecurse(current.right);
+            if(y.parent.right != y){
+                Node finall = transplant(y, y.right);
 
+            }
         }
 
         return null;
     }
     public Node transplant(Node u, Node v){
 
-//      Is the node a left child 
-        if(u.parent.left == u){
-
+//      Is the node a left child
+        if(u.parent == null){
+            v.parent = null;
+            return v;
+        }else if(u.parent.left == u){
+            u.parent.left = v;
+            return u.parent.left;
+        }else(u.parent.right == u){
+            if(v == null){
+                v.parent = u.parent;
+                return v.parent;
+            }
         }
-
+        return null;
     }
 
 //  This helps find the height
