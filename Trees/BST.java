@@ -1,5 +1,7 @@
 package Trees;
 
+import javafx.scene.SubScene;
+
 public class BST {
     Node root;
 
@@ -135,80 +137,21 @@ public class BST {
 
     public Node deleteNode(int value, Node current ){
 
-//        int height = height(root);
-////      if root doesn't have any children, set to null
-//        if(root.left == null && root.right == null){
-//            root = null;
-//        }
-//
-////      if the height of the tree is one
-//        if(height == 1 && (root.right == null || root.left == null)){
-//            if(root.right == null){
-//                root = root.left;
-//                root.parent = null;
-//                return root;
-//            }else {
-//                root = root.right;
-//                root.parent = null;
-//                return root;
-//            }
-//        }else {
-//            if(height == 1 && value == root.value){
-//                System.out.println("Has two children, but height is 1");
-//
-//                root.left.parent = root.right;
-//                root.right.parent = null;
-//                root.left.parent.left = root.left;
-//                return root.left.parent;
-//            }else{
-//                //Has two child and length > 1
-//                Node successor = findSuccsor(root);
-//                while (root.value != successor.parent.value){
-//                    successor.right = successor.parent;
-//                    successor.left = successor.parent.left;
-//
-//                }
-//
-//            }
-//        }
+        Node x = current;
+        if(current.right == null){
 
-//
-//        if(root.left == null){
-//
-//        }else if(root.right.value == value){
-//
-//        }else{
-//        }
-//       if the left child is null, assign the root to be the right child
-        if(current.left == null){
-            current = current.right;
-            current.parent = null;
-            return current;
-
-        }else if(current.right == null){
-//      if the right child is null, assign the root to be the left child.
-            current = current.left;
-            current.parent = null;
-            return current;
-        }else{
-//       if the node more than 1 children, find the successors
-//       replace the parents left subtree with the successors subtree
-
-            Node successor = findSuccsor(current);
-            if(successor.right != null){
-                successor.parent.left = successor.right;
-                successor.parent.left.parent = current.parent;
-
-               // successor.right = current.right;
-            }else{
-
-            }
-
-            successor.right = current.right;
         }
+
         return null;
     }
+    public Node transplant(Node u, Node v){
 
+//      Is the node a left child 
+        if(u.parent.left == u){
+
+        }
+
+    }
 
 //  This helps find the height
     private int height(Node current){
