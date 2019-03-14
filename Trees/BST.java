@@ -141,6 +141,16 @@ public class BST {
         if(removeNode.value == current.value){
 //          Base case, where root is the value to remove
             return null;
+        }else if(removeNode.left == null){
+
+        }else if(removeNode.right == null){
+
+        }else{
+            Node succsor = findSuccsor(current);
+            if(removeNode.right.value != succsor.parent.right.value){
+
+            }
+
         }
 
         return null;
