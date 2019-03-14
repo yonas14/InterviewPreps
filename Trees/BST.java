@@ -121,6 +121,9 @@ public class BST {
             return getMinRecurse(root.right);
         }else {
             Node parent = current.parent;
+//          **********
+//          If the current node is null
+//          go up the tree until you find the first node which is left of its parent
             while( parent != null && parent == current.right){
 
                 current = parent;
@@ -135,25 +138,35 @@ public class BST {
 //  vise versa if the only child of Z is the right child
 //  But if Z has both left and right children, then find the successor, Right side of the tree
 
-    public Node deleteNode(int value, Node current ){
-        Node removeNode = findValue(value, current);
+    public Node deleteRec(Node root,int key){
+        /* Base Case: If the tree is empty */
+        if (root == null)  return root;
 
-        if(removeNode.value == current.value){
-//          Base case, where root is the value to remove
-            return null;
-        }else if(removeNode.left == null){
 
-        }else if(removeNode.right == null){
+        if (key < root.value)
+            root.left = deleteRec(root.left, key);
+        else if (key > root.value)
+            root.right = deleteRec(root.right, key);
 
-        }else{
-            Node succsor = findSuccsor(current);
-            if(removeNode.right.value != succsor.parent.right.value){
+            // if key is same as root's key, then This is the node
+            // to be deleted
+        else
+        {
+            // node with only one child or no child
+            if (root.left == null)
+                return root.right;
+            else if (root.right == null)
+                return root.left;
 
-            }
+            // node with two children: Get the inorder successor (smallest
+            // in the right subtree)
+            root.value = getMinRecurse(root.right).value;
 
+            // Delete the inorder successor
+            root.right = deleteRec(root.right, root.value);
         }
-
-        return null;
+        /* Otherwise, recur down the tree */
+        return root;
     }
 
 

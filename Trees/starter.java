@@ -30,7 +30,7 @@ public class starter {
 
         bst.findSucc();
 
-       Node newTree =  bst.deleteNode(20, tree);
+       Node newTree =  bst.deleteRec(tree,20);
 
         bst.findValue(4, tree);
 
