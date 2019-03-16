@@ -20,4 +20,9 @@ public class start{
 
         graph.adjacencyList[i].add(n);
     }
+
+    public static void breadthFirstTraversal(){}
+    public static void depthFirstTraversal(){}
+
+    
 }
