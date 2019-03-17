@@ -12,6 +12,7 @@ public class start{
         addEdge(2,3);
         addEdge(3,1);
         addEdge(3,2);
+        print();
 
 
     }
@@ -19,10 +20,19 @@ public class start{
     public static void addEdge(int i, int n){
 
         graph.adjacencyList[i].add(n);
+
+    }
+    public static void print(){
+
+        for(int i = 1; i<graph.adjacencyList.length-1; i++){
+            System.out.print(i+" ");
+            System.out.println(graph.adjacencyList[i]);
+        }
+
     }
 
     public static void breadthFirstTraversal(){}
     public static void depthFirstTraversal(){}
 
-    
+
 }
