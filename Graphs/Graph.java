@@ -28,7 +28,6 @@ public class Graph {
             Iterator<Integer> itr = adjacencyList[s].listIterator();
             System.out.print(s + " ");
             while (itr.hasNext()){
-
                 int k = itr.next();
                 if(visited[k] == 0){
                     visited[k] = 1;
@@ -37,6 +36,7 @@ public class Graph {
             }
         }
     }
+    public  void depthFirstTraversal(){}
 
     public void addEdge(int s, int n){
         adjacencyList[s].add(n);
