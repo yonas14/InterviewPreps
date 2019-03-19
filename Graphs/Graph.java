@@ -36,7 +36,10 @@ public class Graph {
             }
         }
     }
-    public  void depthFirstTraversal(){}
+    public  void depthFirstTraversal(){
+
+        
+    }
 
     public void addEdge(int s, int n){
         adjacencyList[s].add(n);
