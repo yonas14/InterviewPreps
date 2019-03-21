@@ -39,10 +39,10 @@ public class Graph {
     public  void depthFirstTraversal(int s){
         int [] vistied = new int[v];
 
-        for(int i =0; i<= vistied.length; i++){
-
-            System.out.println("Hello World");
+        while(vistied[s] == 0 ){
+            
         }
+
 
 
 
