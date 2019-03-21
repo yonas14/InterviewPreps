@@ -36,9 +36,16 @@ public class Graph {
             }
         }
     }
-    public  void depthFirstTraversal(){
+    public  void depthFirstTraversal(int s){
+        int [] vistied = new int[v];
 
-        
+        for(int i =0; i<= vistied.length; i++){
+
+            System.out.println("Hello World");
+        }
+
+
+
     }
 
     public void addEdge(int s, int n){
