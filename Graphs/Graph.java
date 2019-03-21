@@ -5,11 +5,11 @@ import java.util.LinkedList;
 
 public class Graph {
 
-    int v;
+    int V;
     LinkedList<Integer> adjacencyList[];
 
     Graph(int v){
-        this.v = v ;
+        this.V = v ;
         adjacencyList = new LinkedList[v];
 
         for(int i=0; i<v; i++){
@@ -18,7 +18,7 @@ public class Graph {
     }
     public void breadthFirstTraversal(int s){
 
-        int [] visited = new int[v];
+        int [] visited = new int[V];
         System.out.println("Breadth First Traversal");
         LinkedList<Integer> q = new LinkedList<Integer>();
         visited[s] = 1;
@@ -36,16 +36,28 @@ public class Graph {
             }
         }
     }
-    public  void depthFirstTraversal(int s){
-        int [] vistied = new int[v];
 
-        while(vistied[s] == 0 ){
-            
+
+    public void depthFirstChecker(int visited [], int s){
+
+        visited[s] = 1;
+        System.out.print(s +" ");
+        Iterator<Integer> itr = adjacencyList[s].listIterator();
+        while(itr.hasNext()){
+            int k = itr.next();
+            if(visited[k] == 0){
+                depthFirstChecker(visited, k);
+            }
         }
 
+    }
 
 
 
+    public  void depthFirstTraversal(int s){
+        int [] visitied = new int[V];
+
+        depthFirstChecker(visitied, s);
     }
 
     public void addEdge(int s, int n){

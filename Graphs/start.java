@@ -14,6 +14,7 @@ public class start{
         graph.addEdge(3, 3);
         print();
         graph.breadthFirstTraversal(2);
+        graph.depthFirstTraversal(2);
     }
 
 
