@@ -3,27 +3,44 @@ import org.omg.CORBA.INTERNAL;
 
 import java.util.*;
 
-class LIFO {
-    int [] array;
+public class Stack {
+   static ArrayList<Integer> array;
     int popIndex= 0;
 
-    public void main(String[] args){
+    public static void main(String[] args){
 
         Random rand = new Random();
-        array = new int[10];
-        push(rand.nextInt(100)+1);
+        array = new ArrayList<Integer>();
+        for(int i =0; i <= 10; i++){
+            push(rand.nextInt(100)+1);
 
-
+        }
+        print();
+        pop();
+        pop();
     }
 
 
-    public void push(int value){
+    public static void push(int value){
+        array.add(value);
+    }
 
-        System.out.print(array.length);
-//        if(array.length == popIndex){
-//
-//
-//        }
+
+    public static void pop(){
+
+        if(!array.isEmpty()){
+            System.out.println("Popped " +  array.remove(array.size()-1));
+
+        }
+    }
+
+    public static void print(){
+
+        for(int i =0; i < array.size(); i++){
+            System.out.print(array.get(i) + " ");
+        }
+        System.out.println();
 
     }
+
 }
