@@ -39,7 +39,6 @@ public class Graph {
 
 
     public void depthFirstChecker(int visited [], int s){
-
         visited[s] = 1;
         System.out.print(s +" ");
         Iterator<Integer> itr = adjacencyList[s].listIterator();
@@ -49,15 +48,14 @@ public class Graph {
                 depthFirstChecker(visited, k);
             }
         }
-
     }
 
 
 
     public  void depthFirstTraversal(int s){
-        int [] visitied = new int[V];
-
-        depthFirstChecker(visitied, s);
+        int [] visited = new int[V];
+        System.out.println("Depth First Traversal");
+        depthFirstChecker(visited, s);
     }
 
     public void addEdge(int s, int n){
