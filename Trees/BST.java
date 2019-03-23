@@ -226,18 +226,19 @@ public class BST {
 
     }
 
-    private void addHeap(Node root){
+    private void insetHeap(int nodeValue){
+        count++;
+        if(){
 
-        heap.add(count++, root.value);
-        int i = count;
-        if(i > 1){
-            while (heap.get(i) < heap.get(parent(i))){
+        }else{
 
-            }
         }
+        while (heap.get(parent(count)) < heap.get(count)){
 
-
+        }
     }
+
+
 //  returns the index to the parent
     private int parent(int i){
         return i/2;
@@ -248,5 +249,12 @@ public class BST {
     }
     private int left(int i){
         return 2 * i + 1;
+    }
+    private void swap(int current, int parent){
+
+        int temp = heap.get(parent);
+        heap.add(parent, heap.get(current));
+        heap.add(current, parent);
+
     }
 }
