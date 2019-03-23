@@ -232,7 +232,6 @@ public class BST {
         int i = count;
         if(i > 1){
             while (heap.get(i) < heap.get(parent(i))){
-                swa
 
             }
         }
