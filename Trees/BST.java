@@ -2,8 +2,12 @@ package Trees;
 
 import javafx.scene.SubScene;
 
+import java.util.ArrayList;
+
 public class BST {
     Node root;
+    ArrayList<Integer> heap;
+    int count = 0;
 
 
     public void add(int value){
@@ -220,5 +224,30 @@ public class BST {
             printGivenLevel(current.left, level-1);
         }
 
+    }
+
+    private void addHeap(Node root){
+
+        heap.add(count++, root.value);
+        int i = count;
+        if(i > 1){
+            while (heap.get(i) < heap.get(parent(i))){
+                swa
+
+            }
+        }
+
+
+    }
+//  returns the index to the parent
+    private int parent(int i){
+        return i/2;
+    }
+
+    private int right(int i){
+        return 2 * i;
+    }
+    private int left(int i){
+        return 2 * i + 1;
     }
 }
