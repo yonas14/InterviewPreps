@@ -228,13 +228,14 @@ public class BST {
 
     private void insetHeap(int nodeValue){
         count++;
-        if(){
-
+        if(count ==1){
+            heap.add(count, nodeValue);
         }else{
+            while (heap.get(parent(count)) < heap.get(count)){
+                heap.add(parent(count), nodeValue);
+                swap(count, parent(count));
 
-        }
-        while (heap.get(parent(count)) < heap.get(count)){
-
+            }
         }
     }
 
