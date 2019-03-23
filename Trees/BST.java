@@ -234,7 +234,6 @@ public class BST {
             while (heap.get(parent(count)) < heap.get(count)){
                 heap.add(parent(count), nodeValue);
                 swap(count, parent(count));
-
             }
         }
     }
