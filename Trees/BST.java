@@ -37,6 +37,7 @@ public class BST {
         DFT(root);
     };
 
+
     private Node addRecrusively(Node current, int value){
 
         if(current == null){
@@ -256,5 +257,13 @@ public class BST {
         heap.add(parent, heap.get(current));
         heap.add(current, parent);
 
+    }
+
+
+    private void printHeap(){
+
+        for(int i =1; i<=count; i++){
+            System.out.print(heap.get(i));
+        }
     }
 }
