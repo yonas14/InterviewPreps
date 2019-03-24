@@ -199,6 +199,7 @@ public class BST {
         System.out.println("Breadth First Traversal ");
         for(int i =0;  i <= height; i++){
             printGivenLevel(root, i);
+//            insetMinHeap(root.value);
         }
     }
 
@@ -238,8 +239,6 @@ public class BST {
             }
         }
     }
-
-
 //  returns the index to the parent
     private int parent(int i){
         return i/2;
