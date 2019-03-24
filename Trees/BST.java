@@ -226,7 +226,7 @@ public class BST {
 
     }
 
-    private void insetHeap(int nodeValue){
+    private void insetMinHeap(int nodeValue){
         count++;
         if(count ==1){
             heap.add(count, nodeValue);
