@@ -1,5 +1,8 @@
 package Trees;
 
+import java.net.Inet4Address;
+import java.util.ArrayList;
+
 public class starter {
     public static void main(String args []){
 
@@ -18,8 +21,11 @@ public class starter {
 //        bst.add(14);
 
         Node tree = bst.root;
+        bst.heap = new ArrayList<>(10);
+        bst.heap.add(0, -1);
+//        heap = bst.heap;
 
-        bst.BFT(tree);
+        bst.BFT(tree, bst.heap);
         bst.depthFirstTraversal();
 
         bst.getMinimum();
@@ -36,7 +42,8 @@ public class starter {
 
         bst.maxDepth();
 
-        bst.BFT(newTree);
+//        bst.BFT(newTree, heap);
+
 
 
 

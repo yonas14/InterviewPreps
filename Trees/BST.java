@@ -2,13 +2,13 @@ package Trees;
 
 import javafx.scene.SubScene;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class BST {
     Node root;
-    ArrayList<Integer> heap;
+    ArrayList<Integer>  heap;
     int count = 0;
-
 
     public void add(int value){
         root = addRecrusively(root, value);
@@ -146,8 +146,6 @@ public class BST {
     public Node deleteRec(Node root,int key){
         /* Base Case: If the tree is empty */
         if (root == null)  return root;
-
-
         if (key < root.value)
             root.left = deleteRec(root.left, key);
         else if (key > root.value)
@@ -162,18 +160,15 @@ public class BST {
                 return root.right;
             else if (root.right == null)
                 return root.left;
-
             // node with two children: Get the inorder successor (smallest
             // in the right subtree)
             root.value = getMinRecurse(root.right).value;
-
             // Delete the inorder successor
             root.right = deleteRec(root.right, root.value);
         }
         /* Otherwise, recur down the tree */
         return root;
     }
-
 
 //  This helps find the height
     private int height(Node current){
@@ -193,7 +188,7 @@ public class BST {
     }
 
 //    Breadth first traversal
-    public void BFT(Node root){
+    public void BFT(Node root, ArrayList<Integer> heap){
         int height = height(root);
         System.out.println("====================");
         System.out.println("Breadth First Traversal ");
@@ -201,6 +196,30 @@ public class BST {
             printGivenLevel(root, i);
 //            insetMinHeap(root.value);
         }
+        for(int i=0; i<= height; i++){
+            if(i==0){
+                insetMinHeap(insertMinHeapValue(root,i));
+            }else {
+                insertMinHeapValue(root, i);
+
+            }
+        }
+    }
+
+
+
+    public int insertMinHeapValue(Node current, int level){
+
+        if( current == null){
+            return 0;
+        }
+        if(level == 0){
+            return current.value;
+        }else{
+            insetMinHeap(insertMinHeapValue(current.left, level-1));
+            insetMinHeap(insertMinHeapValue(current.right, level-1));
+        }
+        return current.value;
     }
 
     private void DFT(Node current){
@@ -211,7 +230,6 @@ public class BST {
             DFT(current.left);
             DFT(current.right);
         }
-
     }
 //  print given level where level is set to i
     private void printGivenLevel(Node current, int level){
@@ -225,7 +243,6 @@ public class BST {
             printGivenLevel(current.right, level-1);
             printGivenLevel(current.left, level-1);
         }
-
     }
 
     private void insetMinHeap(int nodeValue){
@@ -233,11 +250,21 @@ public class BST {
         if(count ==1){
             heap.add(count, nodeValue);
         }else{
-            while (heap.get(parent(count)) < heap.get(count)){
-                heap.add(parent(count), nodeValue);
-                swap(count, parent(count));
+            heap.add(count, nodeValue);
+            if(heap.get(parent(count)) > heap.get(count)){
+                heapfyDown(count);
             }
         }
+    }
+
+    private void heapfyDown(int index){
+
+        while(heap.get(parent(index)) > heap.get(index) && index > 0){
+            swap(index, parent(index));
+            index = parent(index);
+
+        }
+
     }
 //  returns the index to the parent
     private int parent(int i){
@@ -247,20 +274,18 @@ public class BST {
     private int right(int i){
         return 2 * i;
     }
+
     private int left(int i){
         return 2 * i + 1;
     }
-    private void swap(int current, int parent){
 
+    private void swap(int current, int parent){
         int temp = heap.get(parent);
         heap.add(parent, heap.get(current));
-        heap.add(current, parent);
-
+        heap.add(current, temp);
     }
 
-
     private void printHeap(){
-
         for(int i =1; i<=count; i++){
             System.out.print(heap.get(i));
         }
